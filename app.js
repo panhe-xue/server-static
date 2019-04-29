@@ -19,13 +19,14 @@ app.all('*', function(req, res, next) {
     next()
 })
 
-app.use(serverStatic(__dirname + "/public"))
-
 app.use('/', function(req, res, next) {
     res.header("content-type", "text/plain;charset=utf-8");
     res.end("这是一个静态资源服务")
     next()
 })
+
+app.use(serverStatic(__dirname + "/public"))
+
 
 httpsServer.listen(PORT, () => {
     console.log(`server success on ${PORT}`)
