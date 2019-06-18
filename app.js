@@ -1,6 +1,6 @@
 const express = require("express")
 const https = require('https')
-const PORT = 8001
+const PORT = 443
 const fs = require("fs")
 const serverStatic = require("express-static")
 const app = express()
@@ -19,8 +19,6 @@ app.all('*', function(req, res, next) {
     next()
 })
 
-app.use(serverStatic(__dirname + "/public"))
-
 app.use('/', function(req, res, next) {
     res.end("这是一个静态资源服务")
     next()
@@ -33,6 +31,8 @@ app.get('/test', function(req, res, next) {
     })
     next()
 })
+
+app.use(serverStatic(__dirname + "/public"))
 
 httpsServer.listen(PORT, () => {
     console.log(`server success on ${PORT}`)
