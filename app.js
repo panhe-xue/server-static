@@ -25,7 +25,7 @@ app.use('/', function(req, res, next) {
     res.end("这是一个静态资源服务")
     next()
 })
-app.use('/test', function(req, res, next) {
+app.get('/test', function(req, res, next) {
     res.send({
         ret: 0,
         msg: '成功',
