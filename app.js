@@ -22,8 +22,15 @@ app.all('*', function(req, res, next) {
 app.use(serverStatic(__dirname + "/public"))
 
 app.use('/', function(req, res, next) {
-    res.header("content-type", "text/plain;charset=utf-8");
     res.end("这是一个静态资源服务")
+    next()
+})
+app.use('/test', function(req, res, next) {
+    res.send({
+        ret: 0,
+        msg: '成功',
+        data: [{a: 1}, {b: 2}]
+    })
     next()
 })
 
