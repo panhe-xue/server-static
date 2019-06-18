@@ -19,10 +19,6 @@ app.all('*', function(req, res, next) {
     next()
 })
 
-app.use('/', function(req, res, next) {
-    res.end("这是一个静态资源服务")
-    next()
-})
 app.get('/test', function(req, res, next) {
     res.send({
         ret: 0,
