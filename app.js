@@ -6,8 +6,8 @@ const serverStatic = require("express-static")
 const app = express()
 
 const options = {
-    key: fs.readFileSync('./crt/private.pem', 'utf8'),
-    cert: fs.readFileSync('./crt/file.crt', 'utf8')
+    key: fs.readFileSync('./crt/panhe.xyz.key', 'utf8'),
+    cert: fs.readFileSync('./crt/panhe.xyz_ca.crt', 'utf8')
 }
 const httpsServer = https.createServer(options, app)
 
