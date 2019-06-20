@@ -25,7 +25,6 @@ app.get('/test', function(req, res, next) {
         msg: '成功',
         data: [{a: 1}, {b: 2}]
     })
-    next()
 })
 
 app.use(serverStatic(__dirname + "/public"))
