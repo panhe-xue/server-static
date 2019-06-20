@@ -30,6 +30,6 @@ app.get('/test', function(req, res, next) {
 
 app.use(serverStatic(__dirname + "/public"))
 
-httpsServer.listen(PORT, '182.61.38.185',() => {
+httpsServer.listen(PORT, () => {
     console.log(`server success on ${PORT}`)
 })
