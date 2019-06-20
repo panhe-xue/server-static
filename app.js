@@ -20,6 +20,7 @@ app.all('*', function(req, res, next) {
 })
 
 app.get('/test', function(req, res, next) {
+    console.log("到这里了, test")
     res.send({
         ret: 0,
         msg: '成功',
