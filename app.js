@@ -1,5 +1,6 @@
 const express = require("express")
 const https = require('https')
+const https = require('http')
 const PORT = 8080
 const fs = require("fs")
 const serverStatic = require("express-static")
@@ -9,7 +10,8 @@ const options = {
     key: fs.readFileSync(__dirname + '/crt/panhe.xyz.key', 'utf8'),
     cert: fs.readFileSync(__dirname + '/crt/panhe.xyz.crt', 'utf8')
 }
-const httpsServer = https.createServer(options, app)
+const httpsServer = http.createServer(app)
+// const httpsServer = https.createServer(options, app)
 
 // 设置跨域
 app.all('*', function(req, res, next) {
