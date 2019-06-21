@@ -1,6 +1,6 @@
 const express = require("express")
-const https = require('https')
-const https = require('http')
+// const https = require('https')
+const http = require('http')
 const PORT = 8080
 const fs = require("fs")
 const serverStatic = require("express-static")
@@ -32,6 +32,6 @@ app.get('/test', function(req, res, next) {
 
 app.use(serverStatic(__dirname + "/public"))
 
-httpsServer.listen(PORT, () => {
+httpServer.listen(PORT, () => {
     console.log(`server success on ${PORT}`)
 })
