@@ -20,7 +20,14 @@ app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
     next()
 })
-
+app.get('/', function(req, res, next) {
+    console.log("到这里了11111, test")
+    res.send({
+        ret: 0,
+        msg: '成功11111',
+        data: [{a: 1}, {b: 2}]
+    })
+})
 app.get('/test', function(req, res, next) {
     console.log("到这里了, test")
     res.send({
