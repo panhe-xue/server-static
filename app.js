@@ -10,7 +10,7 @@ const options = {
     key: fs.readFileSync(__dirname + '/crt/panhe.xyz.key', 'utf8'),
     cert: fs.readFileSync(__dirname + '/crt/panhe.xyz.crt', 'utf8')
 }
-const httpsServer = http.createServer(app)
+const httpServer = http.createServer(app)
 // const httpsServer = https.createServer(options, app)
 
 // 设置跨域
